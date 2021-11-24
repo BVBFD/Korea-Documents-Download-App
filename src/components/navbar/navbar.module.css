@@ -1,0 +1,20 @@
+.navbtnBox h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  height: fit-content;
+}
+
+.navbtnBox {
+  width: 100vw;
+  text-align: center;
+}
+
+.navBtn {
+  width: 33.3%;
+  height: 3rem;
+  background-color: wheat;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: darkred;
+  border: 1px solid lightyellow;
+}
