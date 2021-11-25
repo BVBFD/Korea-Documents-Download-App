@@ -1,0 +1,44 @@
+.footerBox {
+  width: 90vw;
+  position: fixed;
+  bottom: 0;
+  padding: 0 10rem 0 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: brown;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  background-color: lightgoldenrodyellow;
+}
+
+.leftFooterBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.followLogoFooterBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.rightFooterBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.rightFooterBox div {
+  text-align: center;
+  margin: 0 1rem;
+}
+
+.copyRightBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.copyRightBox span:nth-child(2) {
+  margin-right: 1rem;
+}

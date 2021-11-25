@@ -3,8 +3,10 @@ import { Link, Routes } from "react-router-dom";
 import { Route, useNavigate, useParams } from "react-router";
 import styles from "./search.module.css";
 import Navbar from "../navbar/navbar";
+import Footer from "../footer/footer";
+import ContentList from "../contentList/contentList";
 
-const Search = ({ authService }) => {
+const Search = ({ authService, files }) => {
   const { id } = useParams();
   console.log(id);
 
@@ -17,20 +19,10 @@ const Search = ({ authService }) => {
           type="text"
           placeholder="전체 검색 기능 (제목 필터링)"
         />
-        <div className={styles.docsContent}>
-          <div className={styles.docsContentTitle}>경력 증명서 (표준양식)</div>
-          <div className={styles.downloadBtnBox}>
-            <button className={styles.excelBtn}>
-              <img src="../images/excel.jpg"></img>
-            </button>
-            <button className={styles.wordBtn}>
-              <img src="../images/word.png"></img>
-            </button>
-            <button className={styles.hangulBtn}>
-              <img src="../images/hangul.jpg"></img>
-            </button>
-          </div>
-        </div>
+        {files.map((file) => {
+          return <ContentList file={file} />;
+        })}
+        <Footer />
       </section>
     </div>
   );
