@@ -15,7 +15,7 @@ const Footer = (props) => {
         </div>
         <div className={styles.followLogoFooterBox}>
           <div>Follow</div>
-          <div>
+          <div class={styles.logoBox}>
             <span>
               <i class="fab fa-linkedin"></i>
             </span>

@@ -12,10 +12,13 @@ const App = ({ authService }) => {
   ]);
 
   const [usersHistory, setUsersHistory] = useState([
-    { lse126: ["경력증명서", "거래명세서", "이력서(국문)", "이력서(영문)"] },
-    { dkf126: ["경력증명서", "거래명세서"] },
-    { lsc126: ["경력증명서", "이력서(국문)"] },
-    { pxs126: ["경력증명서", "이력서(영문)"] },
+    {
+      user: "lse126",
+      userHistory: ["경력증명서", "거래명세서", "이력서(국문)", "이력서(영문)"],
+    },
+    { user: "dkf126", userHistory: ["경력증명서", "거래명세서"] },
+    { user: "lsc126", userHistory: ["경력증명서", "이력서(국문)"] },
+    { user: "pxs126", userHistory: ["경력증명서", "이력서(영문)"] },
   ]);
 
   console.log(usersHistory);
@@ -27,12 +30,25 @@ const App = ({ authService }) => {
         <Route
           exact={true}
           path={"/"}
-          element={<Login authService={authService} />}
+          element={
+            <Login
+              authService={authService}
+              usersHistory={usersHistory}
+              setUsersHistory={setUsersHistory}
+            />
+          }
         />
         <Route
           exact={true}
           path={"/search/:id"}
-          element={<Search authService={authService} files={files} />}
+          element={
+            <Search
+              authService={authService}
+              files={files}
+              usersHistory={usersHistory}
+              setUsersHistory={setUsersHistory}
+            />
+          }
         />
       </Routes>
     </>

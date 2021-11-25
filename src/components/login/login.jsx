@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import styles from "./login.module.css";
 
-const Login = ({ authService }) => {
+const Login = ({ authService, usersHistory, setUsersHistory }) => {
   const navigate = useNavigate();
   const goToSearchPage = (userId) => {
     navigate({
@@ -16,7 +16,16 @@ const Login = ({ authService }) => {
       authService
         .login(event.target.innerText)
         .then((data) => {
-          console.log(data);
+          const users = usersHistory.map((data) => data.user);
+          console.log(users.indexOf(data.user.uid));
+          if (users.indexOf(data.user.uid) === -1) {
+            const usersHistoryUpdate = [
+              ...usersHistory,
+              { user: data.user.uid, userHistory: [] },
+            ];
+            console.log(usersHistoryUpdate);
+            setUsersHistory(usersHistoryUpdate);
+          }
           goToSearchPage(data.user.uid);
         })
         .catch((err) => {
