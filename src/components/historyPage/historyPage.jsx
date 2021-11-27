@@ -1,16 +1,13 @@
 import React from "react";
-import Navbar from "../navbar/navbar";
 import styles from "./historyPage.module.css";
-import Footer from "../footer/footer";
 import { useParams } from "react-router";
 
-const HistoryPage = ({ authService, usersHistory, setUsersHistory }) => {
+const HistoryPage = ({ usersHistory }) => {
   const { id } = useParams();
   console.log(id, usersHistory);
 
   return (
     <div className={styles.searchBox}>
-      <Navbar authService={authService} />
       <section className={styles.searchBoxLogoBtnBox}>
         <input
           className={styles.totalSearchInput}
@@ -54,7 +51,6 @@ const HistoryPage = ({ authService, usersHistory, setUsersHistory }) => {
             });
           }
         })}
-        <Footer />
       </section>
     </div>
   );

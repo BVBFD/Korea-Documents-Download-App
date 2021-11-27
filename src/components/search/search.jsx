@@ -2,17 +2,14 @@ import React, { useRef } from "react";
 import { Link, Routes } from "react-router-dom";
 import { Route, useNavigate, useParams } from "react-router";
 import styles from "./search.module.css";
-import Navbar from "../navbar/navbar";
-import Footer from "../footer/footer";
 import ContentList from "../contentList/contentList";
 
-const Search = ({ authService, files, usersHistory, setUsersHistory }) => {
+const Search = ({ files, usersHistory, setUsersHistory }) => {
   const { id } = useParams();
   console.log(id);
 
   return (
     <div className={styles.searchBox}>
-      <Navbar authService={authService} />
       <section className={styles.searchBoxLogoBtnBox}>
         <input
           className={styles.totalSearchInput}
@@ -29,7 +26,6 @@ const Search = ({ authService, files, usersHistory, setUsersHistory }) => {
             />
           );
         })}
-        <Footer />
       </section>
     </div>
   );

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
+import Footer from "./components/footer/footer";
 import HistoryPage from "./components/historyPage/historyPage";
 import Login from "./components/login/login";
+import Navbar from "./components/navbar/navbar";
 import Search from "./components/search/search";
 
 const App = ({ authService }) => {
@@ -41,25 +43,28 @@ const App = ({ authService }) => {
         />
         <Route
           exact={true}
-          path={"/search/:id"}
+          path={"/:id/search"}
           element={
-            <Search
-              authService={authService}
-              files={files}
-              usersHistory={usersHistory}
-              setUsersHistory={setUsersHistory}
-            />
+            <>
+              <Navbar authService={authService} />
+              <Search
+                files={files}
+                usersHistory={usersHistory}
+                setUsersHistory={setUsersHistory}
+              />
+              <Footer />
+            </>
           }
         />
         <Route
           exact={true}
-          path={"/history/:id"}
+          path={"/:id/history"}
           element={
-            <HistoryPage
-              authService={authService}
-              usersHistory={usersHistory}
-              setUsersHistory={setUsersHistory}
-            />
+            <>
+              <Navbar authService={authService} />
+              <HistoryPage usersHistory={usersHistory} />
+              <Footer />
+            </>
           }
         />
       </Routes>

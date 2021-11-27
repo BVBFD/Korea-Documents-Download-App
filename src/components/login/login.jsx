@@ -6,7 +6,7 @@ const Login = ({ authService, usersHistory, setUsersHistory }) => {
   const navigate = useNavigate();
   const goToSearchPage = (userId) => {
     navigate({
-      pathname: `/search/${userId}`,
+      pathname: `/${userId}/search`,
       state: userId,
     });
   };

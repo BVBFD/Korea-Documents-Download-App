@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, Routes } from "react-router-dom";
-import { Route, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import styles from "./navbar.module.css";
 
 const Navbar = ({ authService }) => {
@@ -14,11 +13,11 @@ const Navbar = ({ authService }) => {
   };
 
   const onDownHistory = () => {
-    navigate(`/history/${id}`);
+    navigate(`/${id}/history`);
   };
 
   const onSearch = () => {
-    navigate(`/search/${id}`);
+    navigate(`/${id}/search`);
   };
 
   return (
