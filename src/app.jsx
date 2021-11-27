@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
+import HistoryPage from "./components/historyPage/historyPage";
 import Login from "./components/login/login";
 import Search from "./components/search/search";
 
@@ -45,6 +46,17 @@ const App = ({ authService }) => {
             <Search
               authService={authService}
               files={files}
+              usersHistory={usersHistory}
+              setUsersHistory={setUsersHistory}
+            />
+          }
+        />
+        <Route
+          exact={true}
+          path={"/history/:id"}
+          element={
+            <HistoryPage
+              authService={authService}
               usersHistory={usersHistory}
               setUsersHistory={setUsersHistory}
             />

@@ -20,6 +20,7 @@ const Search = ({ authService, files, usersHistory, setUsersHistory }) => {
           placeholder="전체 검색 기능 (제목 필터링)"
         />
         {files.map((file) => {
+          console.log(file);
           return (
             <ContentList
               file={file}

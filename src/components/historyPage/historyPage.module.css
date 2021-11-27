@@ -1,0 +1,71 @@
+.searchBox {
+  display: flex;
+  flex-direction: column;
+  height: 3rem;
+}
+
+.totalSearchInput {
+  width: 70vw;
+  height: 2.5rem;
+}
+
+.searchBoxLogoBtnBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.downloadBtnBox button {
+  /* width: 40px;
+      height: 40px; */
+  background-color: transparent;
+  border: none;
+}
+
+.downloadBtnBox img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.excelBtn {
+  background-color: #1f7145;
+}
+
+.wordBtn {
+  background-color: #2a5696;
+}
+
+.hangulBtn {
+  background-color: #0198d3;
+}
+
+.docsContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80vw;
+  margin: auto;
+  margin-top: 1.5rem;
+}
+
+.docsContentTitle {
+  background-color: lightsalmon;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  width: 80%;
+  border-radius: 5px;
+  height: 2.5rem;
+}
+
+.downloadBtnBox {
+  width: 40%;
+  text-align: end;
+}
