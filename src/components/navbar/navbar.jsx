@@ -7,7 +7,6 @@ const Navbar = ({ authService }) => {
   const navigate = useNavigate();
 
   const onLogout = (event) => {
-    console.log(event.target);
     authService.logout();
     navigate("/");
   };

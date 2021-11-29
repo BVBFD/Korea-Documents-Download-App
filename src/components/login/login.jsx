@@ -17,13 +17,11 @@ const Login = ({ authService, usersHistory, setUsersHistory }) => {
         .login(event.target.innerText)
         .then((data) => {
           const users = usersHistory.map((data) => data.user);
-          console.log(users.indexOf(data.user.uid));
           if (users.indexOf(data.user.uid) === -1) {
             const usersHistoryUpdate = [
               ...usersHistory,
               { user: data.user.uid, userHistory: [] },
             ];
-            console.log(usersHistoryUpdate);
             setUsersHistory(usersHistoryUpdate);
           }
           goToSearchPage(data.user.uid);

@@ -24,8 +24,6 @@ const App = ({ authService }) => {
     { user: "pxs126", userHistory: ["경력증명서", "이력서(영문)"] },
   ]);
 
-  console.log(usersHistory);
-
   return (
     <>
       <Link to="/"></Link>

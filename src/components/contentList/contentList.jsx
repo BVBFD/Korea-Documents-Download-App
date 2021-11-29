@@ -5,10 +5,6 @@ import styles from "./contentList.module.css";
 const ContentList = ({ file, usersHistory, setUsersHistory }) => {
   const { id } = useParams();
   const buttonClick = (event) => {
-    console.log(event.target.parentNode.parentNode.download.slice(0, -4));
-    // 글자만 나옴
-    console.log(id);
-    // 아이디 나옴
     const usersHistoryCopy = [...usersHistory];
     const usersHistoryUpdate = usersHistoryCopy.map((user) => {
       if (
@@ -24,7 +20,6 @@ const ContentList = ({ file, usersHistory, setUsersHistory }) => {
       }
       return user;
     });
-    console.log(usersHistoryUpdate);
     setUsersHistory(usersHistoryUpdate);
   };
 
