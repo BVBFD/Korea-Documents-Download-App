@@ -19,6 +19,7 @@ const HistoryPage = ({ usersHistory }) => {
           return user.userHistory;
         }
       });
+      console.log(historyCopy[0]);
       const historyUpdatePrepare = historyCopy[0].userHistory.filter(
         (histy) => {
           if (histy.includes(event.target.value)) {
@@ -45,35 +46,37 @@ const HistoryPage = ({ usersHistory }) => {
               if (user.user === id) {
                 return user.userHistory.map((histy) => {
                   return (
-                    <div className={styles.docsContent}>
-                      <div className={styles.docsContentTitle}>{histy}</div>
-                      <div className={styles.downloadBtnBox}>
-                        <a
-                          href={`../docs/${histy}/${histy}.xls`}
-                          download={`${histy}.xls`}
-                        >
-                          <button className={styles.excelBtn}>
-                            <img src="../images/excel.jpg"></img>
-                          </button>
-                        </a>
-                        <a
-                          href={`../docs/${histy}/${histy}.doc`}
-                          download={`${histy}.doc`}
-                        >
-                          <button className={styles.wordBtn}>
-                            <img src="../images/word.png"></img>
-                          </button>
-                        </a>
-                        <a
-                          href={`../docs/${histy}/${histy}.hwp`}
-                          download={`${histy}.hwp`}
-                        >
-                          <button className={styles.hangulBtn}>
-                            <img src="../images/hangul.jpg"></img>
-                          </button>
-                        </a>
+                    histy && (
+                      <div className={styles.docsContent}>
+                        <div className={styles.docsContentTitle}>{histy}</div>
+                        <div className={styles.downloadBtnBox}>
+                          <a
+                            href={`../docs/${histy}/${histy}.xls`}
+                            download={`${histy}.xls`}
+                          >
+                            <button className={styles.excelBtn}>
+                              <img src="../images/excel.jpg"></img>
+                            </button>
+                          </a>
+                          <a
+                            href={`../docs/${histy}/${histy}.doc`}
+                            download={`${histy}.doc`}
+                          >
+                            <button className={styles.wordBtn}>
+                              <img src="../images/word.png"></img>
+                            </button>
+                          </a>
+                          <a
+                            href={`../docs/${histy}/${histy}.hwp`}
+                            download={`${histy}.hwp`}
+                          >
+                            <button className={styles.hangulBtn}>
+                              <img src="../images/hangul.jpg"></img>
+                            </button>
+                          </a>
+                        </div>
                       </div>
-                    </div>
+                    )
                   );
                 });
               }

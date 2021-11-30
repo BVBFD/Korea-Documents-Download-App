@@ -2,7 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router";
 import styles from "./login.module.css";
 
-const Login = ({ authService, usersHistory, setUsersHistory }) => {
+const Login = ({
+  dataRepository,
+  authService,
+  usersHistory,
+  setUsersHistory,
+}) => {
   const navigate = useNavigate();
   const goToSearchPage = (userId) => {
     navigate({
@@ -20,9 +25,10 @@ const Login = ({ authService, usersHistory, setUsersHistory }) => {
           if (users.indexOf(data.user.uid) === -1) {
             const usersHistoryUpdate = [
               ...usersHistory,
-              { user: data.user.uid, userHistory: [] },
+              { user: data.user.uid, userHistory: [""] },
             ];
             setUsersHistory(usersHistoryUpdate);
+            dataRepository.saveIdData(usersHistoryUpdate);
           }
           goToSearchPage(data.user.uid);
         })

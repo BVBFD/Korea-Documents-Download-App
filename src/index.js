@@ -7,14 +7,16 @@ import AuthService from "./service/auth_service";
 import { firebaseApp } from "./service/firebase";
 import { Fragment } from "react";
 import "@fortawesome/fontawesome-free/js/all.js";
+import DataRepository from "./service/dataRepository";
 
 const authService = new AuthService(firebaseApp);
+const dataRepository = new DataRepository(firebaseApp);
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Fragment>
-        <App authService={authService} />
+        <App dataRepository={dataRepository} authService={authService} />
       </Fragment>
     </BrowserRouter>
   </React.StrictMode>,

@@ -5,7 +5,7 @@ import styles from "./search.module.css";
 import ContentList from "../contentList/contentList";
 import { useState } from "react/cjs/react.development";
 
-const Search = ({ files, usersHistory, setUsersHistory }) => {
+const Search = ({ files, usersHistory, setUsersHistory, dataRepository }) => {
   const { id } = useParams();
   const [index, setIndex] = useState(true);
   const [filesUpdate, setFilesUpdate] = useState();
@@ -40,6 +40,7 @@ const Search = ({ files, usersHistory, setUsersHistory }) => {
               return (
                 <ContentList
                   file={file}
+                  dataRepository={dataRepository}
                   usersHistory={usersHistory}
                   setUsersHistory={setUsersHistory}
                 />

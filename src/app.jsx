@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/footer";
 import HistoryPage from "./components/historyPage/historyPage";
@@ -6,7 +6,7 @@ import Login from "./components/login/login";
 import Navbar from "./components/navbar/navbar";
 import Search from "./components/search/search";
 
-const App = ({ authService }) => {
+const App = ({ authService, dataRepository }) => {
   const [files, setFiles] = useState([
     "경력증명서",
     "거래명세서",
@@ -14,15 +14,13 @@ const App = ({ authService }) => {
     "이력서(영문)",
   ]);
 
-  const [usersHistory, setUsersHistory] = useState([
-    {
-      user: "lse126",
-      userHistory: ["경력증명서", "거래명세서", "이력서(국문)", "이력서(영문)"],
-    },
-    { user: "dkf126", userHistory: ["경력증명서", "거래명세서"] },
-    { user: "lsc126", userHistory: ["경력증명서", "이력서(국문)"] },
-    { user: "pxs126", userHistory: ["경력증명서", "이력서(영문)"] },
-  ]);
+  const [usersHistory, setUsersHistory] = useState([]);
+
+  useEffect(() => {
+    dataRepository.syncIdData((vals) => {
+      setUsersHistory(vals);
+    });
+  }, [dataRepository]);
 
   return (
     <>
@@ -33,6 +31,7 @@ const App = ({ authService }) => {
           path={"/"}
           element={
             <Login
+              dataRepository={dataRepository}
               authService={authService}
               usersHistory={usersHistory}
               setUsersHistory={setUsersHistory}
@@ -47,6 +46,7 @@ const App = ({ authService }) => {
               <Navbar authService={authService} />
               <Search
                 files={files}
+                dataRepository={dataRepository}
                 usersHistory={usersHistory}
                 setUsersHistory={setUsersHistory}
               />

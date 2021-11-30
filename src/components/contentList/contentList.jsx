@@ -2,7 +2,12 @@ import React from "react";
 import { useParams } from "react-router";
 import styles from "./contentList.module.css";
 
-const ContentList = ({ file, usersHistory, setUsersHistory }) => {
+const ContentList = ({
+  file,
+  usersHistory,
+  setUsersHistory,
+  dataRepository,
+}) => {
   const { id } = useParams();
   const buttonClick = (event) => {
     const usersHistoryCopy = [...usersHistory];
@@ -20,6 +25,7 @@ const ContentList = ({ file, usersHistory, setUsersHistory }) => {
       }
       return user;
     });
+    dataRepository.saveIdData(usersHistoryUpdate);
     setUsersHistory(usersHistoryUpdate);
   };
 
