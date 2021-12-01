@@ -25,10 +25,10 @@ const ContentList = ({
       }
       return user;
     });
-    dataRepository.saveIdData(usersHistoryUpdate);
+    console.log(dataRepository);
+    dataRepository?.saveIdData(usersHistoryUpdate);
     setUsersHistory(usersHistoryUpdate);
   };
-
   return (
     <div className={styles.docsContent}>
       <div className={styles.docsContentTitle}>{file}</div>
@@ -42,6 +42,7 @@ const ContentList = ({
             <img src="../images/excel.jpg"></img>
           </button>
         </a>
+
         <a
           href={`../docs/${file}/${file}.doc`}
           download={`${file}.doc`}
@@ -51,6 +52,7 @@ const ContentList = ({
             <img src="../images/word.png"></img>
           </button>
         </a>
+
         <a
           href={`../docs/${file}/${file}.hwp`}
           download={`${file}.hwp`}
