@@ -26,7 +26,7 @@ const Navbar = ({ authService }) => {
         검색
       </button>
       <button className={styles.navBtn} onClick={onDownHistory}>
-        다운로드 히스토리
+        히스토리
       </button>
       <button className={styles.navBtn} onClick={onLogout}>
         로그아웃

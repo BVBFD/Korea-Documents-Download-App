@@ -28,3 +28,13 @@
   transform: scale(0.8);
   transition: all 0.2s linear;
 }
+
+@media screen and (max-width: 350px) {
+  .navbtnBox h1 {
+    font-size: 1.3rem;
+  }
+
+  .navbtnBox .navBtn {
+    font-size: 1.2rem;
+  }
+}

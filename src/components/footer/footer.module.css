@@ -63,3 +63,37 @@
   transform: scale(0.9);
   transition: all 0.2s linear;
 }
+
+@media screen and (max-width: 1024px) {
+  .footerBox {
+    width: 100vw;
+    padding: 0 0 0 0;
+  }
+
+  .footerBox .copyRightBox {
+    font-size: 0.7rem;
+  }
+
+  .footerBox .rightFooterBox {
+    font-size: 0.7rem;
+  }
+
+  .footerBox .rightFooterBox div {
+    margin: 0;
+  }
+
+  .footerBox .followLogoFooterBox .logoBox {
+    display: inline;
+  }
+
+  .footerBox .followLogoFooterBox .logoBox span {
+    font-size: 1rem;
+    margin: 0 0.2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+}
+
+@media screen and (max-width: 300px) {
+}
