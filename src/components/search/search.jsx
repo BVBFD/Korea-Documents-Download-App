@@ -3,7 +3,7 @@ import { Link, Routes } from "react-router-dom";
 import { Route, useNavigate, useParams } from "react-router";
 import styles from "./search.module.css";
 import ContentList from "../contentList/contentList";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 const Search = ({ files, usersHistory, setUsersHistory, dataRepository }) => {
   const { id } = useParams();
