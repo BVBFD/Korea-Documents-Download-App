@@ -18,3 +18,13 @@
   color: darkred;
   border: 1px solid lightyellow;
 }
+
+.navBtn:hover {
+  color: #222;
+  background-color: lightgoldenrodyellow;
+}
+
+.navBtn:active {
+  transform: scale(0.8);
+  transition: all 0.2s linear;
+}

@@ -15,12 +15,42 @@
   background-color: #1f7145;
 }
 
+.excelBtn:hover {
+  transform: scale(1.05);
+  transition: all 0.2s linear;
+}
+
+.excelBtn:active {
+  transform: scale(0.8);
+  transition: all 0.2s linear;
+}
+
 .wordBtn {
   background-color: #2a5696;
 }
 
+.wordBtn:hover {
+  transform: scale(1.05);
+  transition: all 0.2s linear;
+}
+
+.wordBtn:active {
+  transform: scale(0.8);
+  transition: all 0.2s linear;
+}
+
 .hangulBtn {
   background-color: #0198d3;
+}
+
+.hangulBtn:hover {
+  transform: scale(1.05);
+  transition: all 0.2s linear;
+}
+
+.hangulBtn:active {
+  transform: scale(0.8);
+  transition: all 0.2s linear;
 }
 
 .docsContent {

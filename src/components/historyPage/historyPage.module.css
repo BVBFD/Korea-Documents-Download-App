@@ -42,6 +42,31 @@
   background-color: #0198d3;
 }
 
+.excelBtn:hover {
+  transform: scale(1.05);
+  transition: all 0.2s linear;
+}
+.excelBtn:active {
+  transform: scale(0.8);
+  transition: all 0.2s linear;
+}
+.wordBtn:hover {
+  transform: scale(1.05);
+  transition: all 0.2s linear;
+}
+.wordBtn:active {
+  transform: scale(0.8);
+  transition: all 0.2s linear;
+}
+.hangulBtn:hover {
+  transform: scale(1.05);
+  transition: all 0.2s linear;
+}
+.hangulBtn:active {
+  transform: scale(0.8);
+  transition: all 0.2s linear;
+}
+
 .docsContent {
   display: flex;
   flex-direction: row;
