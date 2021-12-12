@@ -82,6 +82,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .docsContent {
+    margin-top: 0.3rem;
+  }
+
   .docsContent .docsContentTitle {
     padding: 0;
   }
@@ -118,6 +122,10 @@
 
   .docsContent .docsContentTitle {
     font-size: 1rem;
+  }
+
+  .docsContent .docsContentTitle {
+    height: 1.5rem;
   }
 }
 
