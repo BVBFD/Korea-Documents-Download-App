@@ -1,19 +1,23 @@
-import React from "react";
-import { useNavigate } from "react-router";
-import styles from "./login.module.css";
+import React from 'react';
+import { useNavigate } from 'react-router';
+import styles from './login.module.css';
 
 const Login = ({
   dataRepository,
   authService,
   usersHistory,
   setUsersHistory,
+  setUserData,
 }) => {
   const navigate = useNavigate();
   const goToSearchPage = (userId) => {
-    navigate({
-      pathname: `/${userId}/search`,
-      state: userId,
-    });
+    setUserData(userId);
+    !userId
+      ? navigate('/')
+      : navigate({
+          pathname: `/${userId}/search`,
+          state: userId,
+        });
   };
 
   const onLogin = (event) => {
@@ -25,7 +29,7 @@ const Login = ({
           if (users.indexOf(data.user.uid) === -1) {
             const usersHistoryUpdate = [
               ...usersHistory,
-              { user: data.user.uid, userHistory: [""] },
+              { user: data.user.uid, userHistory: [''] },
             ];
             setUsersHistory(usersHistoryUpdate);
             dataRepository.saveIdData(usersHistoryUpdate);
@@ -40,7 +44,7 @@ const Login = ({
   return (
     <section className={styles.loginBox}>
       <h1 className={styles.logoHeaderBox}>
-        <img src="./images/Logo-big.png" />
+        <img src='../images/Logo-big.png' />
         <h2>Log-In</h2>
       </h1>
       <div onClick={onLogin} className={styles.loginBoxGoogle}>
